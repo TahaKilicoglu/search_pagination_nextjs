@@ -1,6 +1,13 @@
 import React from 'react';
 
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+// Pagination bileşeninin prop tiplerini tanımlıyoruz
+interface PaginationProps {
+  currentPage: number;    // currentPage prop'u number tipinde olacak
+  totalPages: number;     // totalPages prop'u number tipinde olacak
+  onPageChange: (page: number) => void; // onPageChange prop'u bir fonksiyon
+}
+
+const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
   return (
     <div className="pagination">
       <button 
