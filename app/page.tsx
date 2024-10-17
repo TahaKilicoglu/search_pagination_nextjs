@@ -42,9 +42,18 @@ const Page: React.FC = () => {
     setCurrentPage(1);
   };
 
+  const handleSearch = () => {
+    // Burada arama işlemini gerçekleştirebilirsin
+    console.log(`Searching for: ${searchTerm}`);
+  };
+
   return (
     <div>
-      <Header searchTerm={searchTerm} onSearchChange={handleSearchChange} />
+      <Header 
+        searchTerm={searchTerm} 
+        onSearchChange={handleSearchChange} 
+        onSearch={handleSearch} // onSearch prop'unu burada geçiriyoruz
+      />
       <div className="card-container">
         {currentItems.map((item) => (
           <Card key={item.id} title={item.title} />

@@ -1,6 +1,13 @@
 import React from 'react';
 
-const Header = ({ searchTerm, onSearchChange, onSearch }) => {
+// Prop tiplerini tanımlıyoruz
+interface HeaderProps {
+  searchTerm: string;
+  onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSearch: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ searchTerm, onSearchChange, onSearch }) => {
   return (
     <header className="header">
       <h1 className="logo">Search and Pagination App</h1>
