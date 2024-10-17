@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: #f0f0f0; /* Sayfa arka plan rengi */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #4a90e2, #f06);
+    padding: 20px;
+    color: black;
+    border-radius: 50px;
+  }
+  
+  .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+     margin: 0;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #ffffff, #ffcc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .search-wrapper {
+    position: relative; /* Konumlandırma için */
+    width: 66.67%; /* Sayfanın 2/3'ü */
+    max-width: 600px; /* Maksimum genişlik */
+  }
+  
+  .search-bar {
+    width: 100%; /* Tam genişlik */
+    padding: 10px 40px 10px 10px; /* Sağdan boşluk bırak */
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .search-button {
+    position: absolute; /* Konumlandırmayı belirle */
+    right: 10px; /* Sağdan boşluk bırak */
+    top: 50%; /* Dikey ortala */
+    transform: translateY(-50%); /* Dikey ortalamak için */
+    background: transparent; /* Arka planı saydam yap */
+    border: none; /* Kenarlık yok */
+    cursor: pointer; /* İmleci el şeklinde göster */
+    font-size: 1.2rem; /* Font boyutu */
+    color: #4a90e2; /* Yazı rengi */
+  }
+  
+  
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    background: linear-gradient(135deg, #f06, #4a90e2);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    min-width: 150px; /* Minimum genişlik ayarı */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 200px; /* Kart genişliği */
+    height: 200px; /* Kart yüksekliği */
+    background: linear-gradient(135deg, #f06, #4a90e2);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center; /* Ortalar */
+    align-items: center; /* Dikey olarak ortalar */
+    margin: 20px 0; /* Üst ve alt margin */
+  }
+  
+  .page-button {
+    background: linear-gradient(135deg, #4a90e2, #f06); /* Renkli arka plan */
+    color: white; /* Yazı rengi */
+    border: none; /* Kenarlık yok */
+    border-radius: 5px; /* Köşeleri yuvarlaştır */
+    padding: 10px 20px; /* İçerik için padding */
+    margin: 0 10px; /* Sağdan ve soldan boşluk */
+    cursor: pointer; /* İmleci el şeklinde göster */
+    transition: background 0.3s; /* Geçiş efekti */
+  }
+  
+  .page-button:hover:not(.disabled) {
+    background: linear-gradient(135deg, #f06, #4a90e2); /* Hover efekti */
+  }
+  
+  .disabled {
+    background: grey; /* Pasif durum rengi */
+    cursor: not-allowed; /* İmleci yasak işareti yap */
+  }
+  
+  .page-info {
+    font-size: 1.2rem; /* Yazı boyutu */
+    color: #4a90e2; /* Yazı rengi */
+  }
