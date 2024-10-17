@@ -4,17 +4,23 @@ import React from 'react';
 import Card from '../components/Card';
 import Pagination from '../components/Pagination';
 import Header from '../components/Header';
+import './globals.css';
 
-const Page = () => {
-  const [data, setData] = React.useState([]);
-  const [currentPage, setCurrentPage] = React.useState(1);
-  const [searchTerm, setSearchTerm] = React.useState('');
-  const itemsPerPage = 5;
+interface Post {
+  id: number;
+  title: string;
+}
+
+const Page: React.FC = () => {
+  const [data, setData] = React.useState<Post[]>([]);
+  const [currentPage, setCurrentPage] = React.useState<number>(1);
+  const [searchTerm, setSearchTerm] = React.useState<string>('');
+  const itemsPerPage: number = 5;
 
   React.useEffect(() => {
     const fetchData = async () => {
       const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-      const result = await response.json();
+      const result: Post[] = await response.json();
       setData(result);
     };
 
@@ -25,13 +31,13 @@ const Page = () => {
     item.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
-  const currentItems = filteredData.slice(
+  const totalPages: number = Math.ceil(filteredData.length / itemsPerPage);
+  const currentItems: Post[] = filteredData.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
     setCurrentPage(1);
   };
